@@ -4,8 +4,9 @@
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 <!--meta http-equiv="Pragma" content="no-cache"--> 
 <meta name="viewport" content="width=auto, user-scalable=yes, initial-scale=1, maximum-scale = 1"/>
-<title>OSM ADDR Map 1.0.0</title>
-<!-- V 1.0.0    abgeleitet aus emergency/idx033 
+<title>OSM ADDR Map 1.1.0</title>
+<!-- V 1.0.0    abgeleitet aus emergency/idx033
+     V 1.1.0    other changes 
 -->
 <base target="_top" />
 
@@ -34,7 +35,7 @@
 <script>
    var myBase        = "addr";
    var myVersion     = "1";
-   var mySubversion  = "0"; 
+   var mySubversion  = "1"; 
    var mySerial      = "0";
    var FEATURE_COUNT =  5;   
    var myName        = myBase+"-"+myVersion+"."+mySubversion+"."+mySerial;
@@ -230,83 +231,7 @@
                    { name:          "Adresses"
                     ,layers:        "osm:Adresses"
                    }));
-/*
-      var L_Firestations = L.tileLayer.wms(geosWMS, merge_options(globalOverlayOptions, 
-                   { name:          "Firestations"
-                    ,layers:        "osm:Fire_Stations"
-                   }));
-      
-      var L_Hydrants = L.markerClusterGroup(merge_options(globalOverlayOptions, {
-                     name:          "Hydrants"
-                    ,type:          "WFS"
-                    ,typeName:      "osm:Hydrants"
-                    ,allMarkers:    []
-                    ,disableClusteringAtZoom: 17
-                    ,iconCreateFunction: function(cluster) {
-                       return getClusterIcon(baseUrl+"/webcommon/images/svg/emergency_fire_hydrant.svg",cluster.getChildCount());
-	                 }
-                   }
-                )
-      );
 
-      var L_Sirens = L.tileLayer.wms(geosWMS, merge_options(globalOverlayOptions, 
-                   { name:          "Sirens"
-                    ,layers:        "osm:Sirens"
-                   }));      
-      
-      var L_KWF = L.markerClusterGroup(merge_options(globalOverlayOptions, 
-                   { name:          "KWF"
-                    ,type:          "WFS"
-                    ,attribution:   KWFAttr
-                    ,type:          "WFS"
-                    ,typeName:      "osm:KWF"
-                    ,allMarkers:    []
-                    ,iconCreateFunction: function(cluster) {
-                          return getClusterIcon(baseUrl+"/webcommon/images/svg/KWF_emergency_access_point.svg",cluster.getChildCount());
-	                   }
-                   }
-                )
-      );
-      
-      var L_Emergency_Access_Points = L.markerClusterGroup(merge_options(globalOverlayOptions, {
-                     name:          "Emergency Access Points"
-                    ,type:          "WFS"
-                    ,typeName:      "osm:Emergency Access Points"
-                    ,allMarkers:    []
-                    ,iconCreateFunction: function(cluster) {
-                       return getClusterIcon(baseUrl+"/webcommon/images/svg/highway_emergency_access_point.svg",cluster.getChildCount());
-	                 }
-                   }
-                )
-      );
-
-      var L_Emergency_Assembly_Points = L.tileLayer.wms(geosWMS, merge_options(globalOverlayOptions, 
-                   { name:          "Emergency Assembly Points"
-                    ,layers:        "osm:Sammelpunkte"
-                   }));   
-
-      var L_Entries = L.tileLayer.wms(geosWMS, merge_options(globalOverlayOptions, 
-                   { name:          "Entries & Exits"
-                    ,layers:        "osm:Emergency_Exits2"
-                    ,minZoom:       16
-                    ,maxZoom:       20
-                   })); 
-
-      var L_Emergency_Phones = L.tileLayer.wms(geosWMS, merge_options(globalOverlayOptions, 
-                   { name:          "Emergency Phones"
-                    ,layers:        "osm:Emergency_Phones"
-                   }));
-
-      var L_Ambulance_Stations = L.tileLayer.wms(geosWMS, merge_options(globalOverlayOptions, 
-                   { name:          "Ambulance Stations"
-                    ,layers:        "osm:ambulance_stations"
-                   }));
-
-      var L_Defibrillators = L.tileLayer.wms(geosWMS, merge_options(globalOverlayOptions, 
-                   { name:          "Defibrillators"
-                    ,layers:        "osm:defibrillators"
-                   }));
-*/      
       var overlayLayers = {
          "Contours":                        L_Contours,
          "Hillshading":                     L_Hillshading,
