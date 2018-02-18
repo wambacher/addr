@@ -4,10 +4,11 @@
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 <!--meta http-equiv="Pragma" content="no-cache"--> 
 <meta name="viewport" content="width=auto, user-scalable=yes, initial-scale=1, maximum-scale = 1"/>
-<title>OSM ADDR Map 1.2.0</title>
+<title>OSM ADDR Map 1.3.0</title>
 <!-- V 1.0.0    abgeleitet aus emergency/idx033
      V 1.1.0    other changes
      V 1.2.0    other landuses added
+     V 1.3.0    buildings added
 -->
 <base target="_top" />
 
@@ -36,7 +37,7 @@
 <script>
    var myBase        = "addr";
    var myVersion     = "1";
-   var mySubversion  = "2"; 
+   var mySubversion  = "3"; 
    var mySerial      = "0";
    var FEATURE_COUNT =  5;   
    var myName        = myBase+"-"+myVersion+"."+mySubversion+"."+mySerial;
@@ -232,7 +233,14 @@
                    { name:          "OtherLanduses"
                     ,layers:        "osm:OtherLanduses"
                    }));
-
+      
+      var L_Buildings = L.tileLayer.wms(geosWMS, merge_options(globalOverlayOptions, 
+                   { name:          "Buldings"
+                    ,layers:        "osm:Buildings"
+                    ,minZoom:       15
+                    ,maxZoom:       19    
+                   }));
+      
       var L_Adresses = L.tileLayer.wms(geosWMS, merge_options(globalOverlayOptions, 
                    { name:          "Adresses"
                     ,layers:        "osm:Adresses"
@@ -245,6 +253,7 @@
          "Commercials":                     L_Commercials,
          "Industrials":                     L_Industrials,
          "Other landuses":                  L_OtherLanduses,
+         "Buildings":                       L_Buildings,
          "Adresses":                        L_Adresses,
          "Kreise/Kreisfreie St&auml;dte":   L_AL6,
          "Verbandsgemeinden":               L_AL7,
