@@ -4,9 +4,10 @@
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 <!--meta http-equiv="Pragma" content="no-cache"--> 
 <meta name="viewport" content="width=auto, user-scalable=yes, initial-scale=1, maximum-scale = 1"/>
-<title>OSM ADDR Map 1.1.0</title>
+<title>OSM ADDR Map 1.2.0</title>
 <!-- V 1.0.0    abgeleitet aus emergency/idx033
-     V 1.1.0    other changes 
+     V 1.1.0    other changes
+     V 1.2.0    other landuses added
 -->
 <base target="_top" />
 
@@ -35,7 +36,7 @@
 <script>
    var myBase        = "addr";
    var myVersion     = "1";
-   var mySubversion  = "1"; 
+   var mySubversion  = "2"; 
    var mySerial      = "0";
    var FEATURE_COUNT =  5;   
    var myName        = myBase+"-"+myVersion+"."+mySubversion+"."+mySerial;
@@ -226,6 +227,11 @@
                    { name:          "Industrials"
                     ,layers:        "osm:Industrials"
                    }));
+      
+      var L_OtherLanduses = L.tileLayer.wms(geosWMS, merge_options(globalOverlayOptions, 
+                   { name:          "OtherLanduses"
+                    ,layers:        "osm:OtherLanduses"
+                   }));
 
       var L_Adresses = L.tileLayer.wms(geosWMS, merge_options(globalOverlayOptions, 
                    { name:          "Adresses"
@@ -238,6 +244,7 @@
          "Residentials":                    L_Residentials,
          "Commercials":                     L_Commercials,
          "Industrials":                     L_Industrials,
+         "Other landuses":                  L_OtherLanduses,
          "Adresses":                        L_Adresses,
          "Kreise/Kreisfreie St&auml;dte":   L_AL6,
          "Verbandsgemeinden":               L_AL7,
